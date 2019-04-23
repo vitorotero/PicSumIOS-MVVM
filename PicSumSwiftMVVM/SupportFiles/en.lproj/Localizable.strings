@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  PicSumSwiftMVVM
+
+  Created by VitorOtero on 23/04/19.
+  Copyright © 2019 VitorOtero. All rights reserved.
+*/
+
+// MARK: - Global Texts
+"TitleOK" = "OK";
+"TitleSuccess" = "Sucesso";
+"TitleError" = "Erro";
+"NoInternet" = "Não foi possível conectar com o servidor. Por favor, verifique a sua conexão com a internet e tente novamente.";
+"GenericMessageError" = "Ocorreu um erro inesperado. Por favor, tente novamente.";
+
+
+// MARK: - HomeViewController
