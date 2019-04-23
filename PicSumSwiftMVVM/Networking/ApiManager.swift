@@ -17,10 +17,10 @@ enum APIError: Error {
 }
 
 enum HTTPMethod: String {
-    case GET = "GET"
-    case POST = "POST"
-    case PUT = "PUT"
-    case DELETE = "DELETE"
+    case GET
+    case POST
+    case PUT
+    case DELETE
 }
 
 protocol Routable {

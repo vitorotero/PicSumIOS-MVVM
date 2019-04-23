@@ -10,12 +10,14 @@ import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var lbTeste: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func setup(with: Photo) {
-        
+    func setup(with photo: Photo) {
+        lbTeste.text = photo.author
     }
 
 }

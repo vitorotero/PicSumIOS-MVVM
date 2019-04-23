@@ -22,7 +22,10 @@ class HomeListSectionController: ListSectionController {
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        guard let cell = collectionContext?.dequeueReusableCell(withNibName: "ConsumptionListCollectionViewCell", bundle: nil, for: self, at: index)
+        guard let cell = collectionContext?.dequeueReusableCell(withNibName: "HomeCollectionViewCell",
+                                                                bundle: nil,
+                                                                for: self,
+                                                                at: index)
             as? HomeCollectionViewCell else { fatalError() }
         cell.setup(with: object)
         return cell
