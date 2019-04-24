@@ -93,6 +93,7 @@ extension HomeViewController: ListAdapterDataSource {
     }
 }
 
+// MARK: - HomeCollectionViewCellDelegate
 extension HomeViewController: HomeCollectionViewCellDelegate {
     func openBrowser(url: String) {
         if let url = URL(string: url) {
