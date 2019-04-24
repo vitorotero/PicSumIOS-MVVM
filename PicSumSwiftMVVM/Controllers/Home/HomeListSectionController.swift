@@ -12,13 +12,18 @@ import IGListKit
 class HomeListSectionController: ListSectionController {
     
     private var object: Photo!
+    private weak var cellDelegate: HomeCollectionViewCellDelegate!
+    
+    init(cellDelegate: HomeCollectionViewCellDelegate) {
+        self.cellDelegate = cellDelegate
+    }
     
     override func numberOfItems() -> Int {
         return 1
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
-        return CGSize(width: collectionContext!.containerSize.width, height: 90)
+        return CGSize(width: collectionContext!.containerSize.width, height: 180)
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
@@ -27,7 +32,7 @@ class HomeListSectionController: ListSectionController {
                                                                 for: self,
                                                                 at: index)
             as? HomeCollectionViewCell else { fatalError() }
-        cell.setup(with: object)
+        cell.setup(with: cellDelegate, photo:object)
         return cell
     }
     

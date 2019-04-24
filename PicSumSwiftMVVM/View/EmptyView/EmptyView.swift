@@ -19,7 +19,7 @@ class EmptyView: UIView {
     
     func setup(text: String, image: UIImage?) {
         self.emptyMessageLabel.text = text
-        self.emptyMessageLabel.textColor = UIColor.App.charcoal
+        self.emptyMessageLabel.textColor = .black
 //        self.iconEmptyImageView.image = image
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(EmptyView.iconEmptyTapped))

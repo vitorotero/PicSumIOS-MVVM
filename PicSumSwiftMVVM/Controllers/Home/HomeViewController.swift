@@ -11,7 +11,7 @@ import IGListKit
 import RxSwift
 
 class HomeViewController: UIViewController {
-
+    
     // MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
                 }
                 
             })
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
     }
     
     private func prepareCollectionView() {
@@ -66,22 +66,22 @@ class HomeViewController: UIViewController {
     // MARK: - Actions
     @objc func refreshValueChanged(refreshControl: UIRefreshControl) {
         refreshControl.endRefreshing()
-//        self.doRefresh()
+        //        self.doRefresh()
     }
-
+    
 }
 
 // MARK: - ListAdapterDataSource
 extension HomeViewController: ListAdapterDataSource {
-
+    
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         return self.viewModel.photos.value
     }
-
+    
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return HomeListSectionController()
+        return HomeListSectionController(cellDelegate: self)
     }
-
+    
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
         let emptyView: EmptyView? = {
             let view = R.nib.emptyView.instantiate(withOwner: nil)[0] as? EmptyView
@@ -93,12 +93,10 @@ extension HomeViewController: ListAdapterDataSource {
     }
 }
 
-// MARK: - UIScrollViewDelegate
-//extension HomeViewController: UIScrollViewDelegate {
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let reachedBottom = (scrollView.contentOffset.y + scrollView.frame.height == scrollView.contentSize.height)
-//        if reachedBottom {
-//            self.delegate.loadData(isRefresh: false, skip: self.items.count)
-//        }
-//    }
-//}
+extension HomeViewController: HomeCollectionViewCellDelegate {
+    func openBrowser(url: String) {
+        if let url = URL(string: url) {
+            UIApplication.shared.open(url, options: [:])
+        }
+    }
+}

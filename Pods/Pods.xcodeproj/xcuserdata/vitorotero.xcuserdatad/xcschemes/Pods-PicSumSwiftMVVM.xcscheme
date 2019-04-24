@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E9E754EE688E2CD9E638A924DDDCAE32"
+               BlueprintIdentifier = "9B89D2BD77F1C516EB05769A56C401D8"
                BuildableName = "Pods_PicSumSwiftMVVM.framework"
                BlueprintName = "Pods-PicSumSwiftMVVM"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E9E754EE688E2CD9E638A924DDDCAE32"
+            BlueprintIdentifier = "9B89D2BD77F1C516EB05769A56C401D8"
             BuildableName = "Pods_PicSumSwiftMVVM.framework"
             BlueprintName = "Pods-PicSumSwiftMVVM"
             ReferencedContainer = "container:Pods.xcodeproj">

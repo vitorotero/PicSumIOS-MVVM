@@ -26,7 +26,6 @@ class Photo: Codable {
         case authorUrl = "author_url"
         case postUrl = "post_url"
     }
-    
 }
 
 extension Photo: ListDiffable {
