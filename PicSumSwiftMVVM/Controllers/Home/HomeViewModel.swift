@@ -16,6 +16,7 @@ class HomeViewModel {
     private let disposeBag: DisposeBag = DisposeBag()
     
     var photos = BehaviorRelay<[Photo]>(value: [Photo]())
+    var openDetailPhoto = BehaviorRelay<Photo?>(value: nil)
     
     init(photoProvider: PhotoProviderProtocol = PhotoProvider()) {
         self.photoProvider = photoProvider
@@ -31,6 +32,10 @@ class HomeViewModel {
                     
             })
             .disposed(by: disposeBag)
+    }
+    
+    func didSelected(photo: Photo) {
+        openDetailPhoto.accept(photo)
     }
     
 }

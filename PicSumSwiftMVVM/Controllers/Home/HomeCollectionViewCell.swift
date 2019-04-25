@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 
 protocol HomeCollectionViewCellDelegate: class {
+    func didSelect(item: Photo)
     func openBrowser(url: String)
 }
 

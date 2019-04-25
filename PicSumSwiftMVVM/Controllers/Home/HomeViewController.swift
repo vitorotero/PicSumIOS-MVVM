@@ -18,7 +18,6 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     private let disposeBag = DisposeBag()
     private var viewModel: HomeViewModel!
-    private var refreshControl: UIRefreshControl!
     private lazy var adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     
     // MARK: - Life Cycle
@@ -51,22 +50,20 @@ class HomeViewController: UIViewController {
                 
             })
             .disposed(by: disposeBag)
+        
+        viewModel.openDetailPhoto
+            .subscribe(onNext: { [weak self] photo in
+                guard let self = self, let photo = photo else { return }
+                
+                print(photo.author)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func prepareCollectionView() {
-        refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .clear
-        refreshControl.addTarget(self, action: #selector(refreshValueChanged), for: .valueChanged)
         collectionView.backgroundColor = .clear
-        collectionView.refreshControl = refreshControl
         adapter.collectionView = collectionView
         adapter.dataSource = self
-    }
-    
-    // MARK: - Actions
-    @objc func refreshValueChanged(refreshControl: UIRefreshControl) {
-        refreshControl.endRefreshing()
-        //        self.doRefresh()
     }
     
 }
@@ -83,13 +80,7 @@ extension HomeViewController: ListAdapterDataSource {
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
-        let emptyView: EmptyView? = {
-            let view = R.nib.emptyView.instantiate(withOwner: nil)[0] as? EmptyView
-            let message = "vazio"
-            view?.setup(text: message, image: nil)
-            return view
-        }()
-        return emptyView
+        return nil
     }
 }
 
@@ -99,5 +90,9 @@ extension HomeViewController: HomeCollectionViewCellDelegate {
         if let url = URL(string: url) {
             UIApplication.shared.open(url, options: [:])
         }
+    }
+    
+    func didSelect(item: Photo) {
+        viewModel.didSelected(photo: item)
     }
 }

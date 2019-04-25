@@ -39,4 +39,8 @@ class HomeListSectionController: ListSectionController {
     override func didUpdate(to object: Any) {
         self.object = object as? Photo
     }
+    
+    override func didSelectItem(at index: Int) {
+        self.cellDelegate.didSelect(item: object)
+    }
 }

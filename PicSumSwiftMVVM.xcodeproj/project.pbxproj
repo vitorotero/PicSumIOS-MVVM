@@ -11,8 +11,6 @@
 		662C21E1226E01CB0060B536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C21E0226E01CB0060B536 /* AppDelegate.swift */; };
 		662C21E8226E01CC0060B536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662C21E7226E01CC0060B536 /* Assets.xcassets */; };
 		662C21EB226E01CC0060B536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 662C21E9226E01CC0060B536 /* LaunchScreen.storyboard */; };
-		662C2383226F90FE00AC3EE2 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C2382226F90FE00AC3EE2 /* EmptyView.swift */; };
-		662C2385226F910E00AC3EE2 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662C2384226F910E00AC3EE2 /* EmptyView.xib */; };
 		662C238A226F943500AC3EE2 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C2389226F943500AC3EE2 /* AppColor.swift */; };
 		662C238D226F947000AC3EE2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C238C226F947000AC3EE2 /* UIColor.swift */; };
 		662C238F226F949A00AC3EE2 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C238E226F949A00AC3EE2 /* UICollectionView.swift */; };
@@ -36,8 +34,6 @@
 		662C21E7226E01CC0060B536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		662C21EA226E01CC0060B536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		662C21EC226E01CC0060B536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		662C2382226F90FE00AC3EE2 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
-		662C2384226F910E00AC3EE2 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		662C2389226F943500AC3EE2 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		662C238C226F947000AC3EE2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		662C238E226F949A00AC3EE2 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
@@ -169,7 +165,6 @@
 		662C21F8226E02470060B536 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				66CDE6B0226F90C300DA9B87 /* EmptyView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,15 +204,6 @@
 				66CDE6A9226F847800DA9B87 /* PhotoRouter.swift */,
 			);
 			path = Routers;
-			sourceTree = "<group>";
-		};
-		66CDE6B0226F90C300DA9B87 /* EmptyView */ = {
-			isa = PBXGroup;
-			children = (
-				662C2382226F90FE00AC3EE2 /* EmptyView.swift */,
-				662C2384226F910E00AC3EE2 /* EmptyView.xib */,
-			);
-			path = EmptyView;
 			sourceTree = "<group>";
 		};
 		8DF82BB15139D11797208C94 /* Pods */ = {
@@ -295,7 +281,6 @@
 				662C21EB226E01CC0060B536 /* LaunchScreen.storyboard in Resources */,
 				66996016226F34BF002A45ED /* Localizable.strings in Resources */,
 				662C21E8226E01CC0060B536 /* Assets.xcassets in Resources */,
-				662C2385226F910E00AC3EE2 /* EmptyView.xib in Resources */,
 				66996013226F315C002A45ED /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,7 +342,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -409,7 +394,6 @@
 				66CDE6AC226F85F100DA9B87 /* PhotoProvider.swift in Sources */,
 				662C238F226F949A00AC3EE2 /* UICollectionView.swift in Sources */,
 				662C21E1226E01CB0060B536 /* AppDelegate.swift in Sources */,
-				662C2383226F90FE00AC3EE2 /* EmptyView.swift in Sources */,
 				66996012226F315C002A45ED /* HomeViewController.swift in Sources */,
 				6699601A226F413C002A45ED /* HomeListSectionController.swift in Sources */,
 				662C238A226F943500AC3EE2 /* AppColor.swift in Sources */,
