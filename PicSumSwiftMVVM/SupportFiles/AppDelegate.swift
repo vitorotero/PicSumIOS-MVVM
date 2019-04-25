@@ -18,7 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.tintColor = UIColor.gray
         
         self.window = window
-        window.rootViewController = UINavigationController(rootViewController: HomeViewController())
+        
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().backgroundColor = .clear
+        UINavigationBar.appearance().isTranslucent = true
+        
+        let navigationController = UINavigationController(rootViewController: HomeViewController())
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
         return true

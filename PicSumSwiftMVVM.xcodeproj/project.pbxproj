@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5804C0D4BAF7ADEBF538DDA1 /* Pods_PicSumSwiftMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B386C77A6D7A8F48D5DDDCA3 /* Pods_PicSumSwiftMVVM.framework */; };
+		6626E94622721FB700D84606 /* PhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6626E94422721FB700D84606 /* PhotoDetailViewController.xib */; };
+		6626E94722721FB700D84606 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6626E94522721FB700D84606 /* PhotoDetailViewController.swift */; };
+		6626E94922723DCE00D84606 /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6626E94822723DCE00D84606 /* DeviceUtils.swift */; };
+		6626E94B2272425F00D84606 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6626E94A2272425F00D84606 /* Constants.swift */; };
 		662C21E1226E01CB0060B536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C21E0226E01CB0060B536 /* AppDelegate.swift */; };
 		662C21E8226E01CC0060B536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662C21E7226E01CC0060B536 /* Assets.xcassets */; };
 		662C21EB226E01CC0060B536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 662C21E9226E01CC0060B536 /* LaunchScreen.storyboard */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6626E94422721FB700D84606 /* PhotoDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoDetailViewController.xib; sourceTree = "<group>"; };
+		6626E94522721FB700D84606 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		6626E94822723DCE00D84606 /* DeviceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
+		6626E94A2272425F00D84606 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		662C21DD226E01CB0060B536 /* PicSumSwiftMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicSumSwiftMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		662C21E0226E01CB0060B536 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		662C21E7226E01CC0060B536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +82,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6626E94322721F8A00D84606 /* PhotoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				6626E94522721FB700D84606 /* PhotoDetailViewController.swift */,
+				6626E94422721FB700D84606 /* PhotoDetailViewController.xib */,
+			);
+			path = PhotoDetail;
+			sourceTree = "<group>";
+		};
 		662C21D4226E01CB0060B536 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +131,7 @@
 				662C21E7226E01CC0060B536 /* Assets.xcassets */,
 				662C21E9226E01CC0060B536 /* LaunchScreen.storyboard */,
 				662C2389226F943500AC3EE2 /* AppColor.swift */,
+				6626E94A2272425F00D84606 /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -132,6 +150,7 @@
 		662C21F4226E021E0060B536 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6626E94322721F8A00D84606 /* PhotoDetail */,
 				6699600F226F3140002A45ED /* Home */,
 			);
 			path = Controllers;
@@ -172,6 +191,7 @@
 		662C21F9226E024E0060B536 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				6626E94822723DCE00D84606 /* DeviceUtils.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -277,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6626E94622721FB700D84606 /* PhotoDetailViewController.xib in Resources */,
 				66996022226F521B002A45ED /* HomeCollectionViewCell.xib in Resources */,
 				662C21EB226E01CC0060B536 /* LaunchScreen.storyboard in Resources */,
 				66996016226F34BF002A45ED /* Localizable.strings in Resources */,
@@ -392,9 +413,12 @@
 				66CDE6A8226F7A8000DA9B87 /* ApiManager.swift in Sources */,
 				6699601C226F4249002A45ED /* Photo.swift in Sources */,
 				66CDE6AC226F85F100DA9B87 /* PhotoProvider.swift in Sources */,
+				6626E94B2272425F00D84606 /* Constants.swift in Sources */,
 				662C238F226F949A00AC3EE2 /* UICollectionView.swift in Sources */,
 				662C21E1226E01CB0060B536 /* AppDelegate.swift in Sources */,
 				66996012226F315C002A45ED /* HomeViewController.swift in Sources */,
+				6626E94922723DCE00D84606 /* DeviceUtils.swift in Sources */,
+				6626E94722721FB700D84606 /* PhotoDetailViewController.swift in Sources */,
 				6699601A226F413C002A45ED /* HomeListSectionController.swift in Sources */,
 				662C238A226F943500AC3EE2 /* AppColor.swift in Sources */,
 				66CDE6AA226F847800DA9B87 /* PhotoRouter.swift in Sources */,

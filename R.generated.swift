@@ -18,18 +18,12 @@ struct R: Rswift.Validatable {
   
   /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
-    /// Nib `EmptyView`.
-    static let emptyView = _R.nib._EmptyView()
     /// Nib `HomeCollectionViewCell`.
     static let homeCollectionViewCell = _R.nib._HomeCollectionViewCell()
     /// Nib `HomeViewController`.
     static let homeViewController = _R.nib._HomeViewController()
-    
-    /// `UINib(name: "EmptyView", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.emptyView) instead")
-    static func emptyView(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.emptyView)
-    }
+    /// Nib `PhotoDetailViewController`.
+    static let photoDetailViewController = _R.nib._PhotoDetailViewController()
     
     /// `UINib(name: "HomeCollectionViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.homeCollectionViewCell) instead")
@@ -43,8 +37,10 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.homeViewController)
     }
     
-    static func emptyView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PicSumSwiftMVVM.EmptyView? {
-      return R.nib.emptyView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PicSumSwiftMVVM.EmptyView
+    /// `UINib(name: "PhotoDetailViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.photoDetailViewController) instead")
+    static func photoDetailViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.photoDetailViewController)
     }
     
     static func homeCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HomeCollectionViewCell? {
@@ -53,6 +49,10 @@ struct R: Rswift.Validatable {
     
     static func homeViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.homeViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+    
+    static func photoDetailViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.photoDetailViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
     fileprivate init() {}
@@ -81,7 +81,7 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 5 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 8 localization keys.
     struct localizable {
       /// en translation: Erro
       /// 
@@ -99,6 +99,18 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: en
       static let genericMessageError = Rswift.StringResource(key: "GenericMessageError", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Pagina do Autor
+      /// 
+      /// Locales: en
+      static let photoDetailAuthorButtonText = Rswift.StringResource(key: "PhotoDetailAuthorButtonText", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Pagina do Post
+      /// 
+      /// Locales: en
+      static let photoDetailPostButtonText = Rswift.StringResource(key: "PhotoDetailPostButtonText", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Pic Sum
+      /// 
+      /// Locales: en
+      static let homeTitle = Rswift.StringResource(key: "HomeTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Sucesso
       /// 
       /// Locales: en
@@ -130,6 +142,27 @@ struct R: Rswift.Validatable {
       /// Locales: en
       static func genericMessageError(_: Void = ()) -> String {
         return NSLocalizedString("GenericMessageError", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Pagina do Autor
+      /// 
+      /// Locales: en
+      static func photoDetailAuthorButtonText(_: Void = ()) -> String {
+        return NSLocalizedString("PhotoDetailAuthorButtonText", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Pagina do Post
+      /// 
+      /// Locales: en
+      static func photoDetailPostButtonText(_: Void = ()) -> String {
+        return NSLocalizedString("PhotoDetailPostButtonText", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Pic Sum
+      /// 
+      /// Locales: en
+      static func homeTitle(_: Void = ()) -> String {
+        return NSLocalizedString("HomeTitle", bundle: R.hostingBundle, comment: "")
       }
       
       /// en translation: Sucesso
@@ -164,17 +197,6 @@ struct _R: Rswift.Validatable {
   }
   
   struct nib {
-    struct _EmptyView: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "EmptyView"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PicSumSwiftMVVM.EmptyView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PicSumSwiftMVVM.EmptyView
-      }
-      
-      fileprivate init() {}
-    }
-    
     struct _HomeCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = HomeCollectionViewCell
       
@@ -192,6 +214,17 @@ struct _R: Rswift.Validatable {
     struct _HomeViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "HomeViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _PhotoDetailViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PhotoDetailViewController"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
