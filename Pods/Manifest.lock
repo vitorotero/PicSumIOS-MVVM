@@ -4,6 +4,7 @@ PODS:
   - IGListKit/Default (3.4.0):
     - IGListKit/Diffing
   - IGListKit/Diffing (3.4.0)
+  - Kingfisher (5.3.1)
   - R.swift (5.0.3):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.1)
@@ -14,6 +15,7 @@ PODS:
 
 DEPENDENCIES:
   - IGListKit
+  - Kingfisher
   - R.swift
   - RxCocoa
   - RxSwift
@@ -22,6 +24,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - IGListKit
+    - Kingfisher
     - R.swift
     - R.swift.Library
     - RxCocoa
@@ -30,12 +33,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
+  Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 870fe05de01011d578e14c151cd8c1ec911fce34
+PODFILE CHECKSUM: 87656fec0381ef0b65fe3dac78cd2a2d318002b1
 
 COCOAPODS: 1.6.1

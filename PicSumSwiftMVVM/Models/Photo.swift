@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import IGListKit
 
-struct Photo: Codable {
+class Photo: Codable {
     
     var id: Int = 0
     var format: String = ""
@@ -25,5 +26,16 @@ struct Photo: Codable {
         case authorUrl = "author_url"
         case postUrl = "post_url"
     }
+}
+
+extension Photo: ListDiffable {
+    func diffIdentifier() -> NSObjectProtocol {
+        return id as NSObjectProtocol
+    }
     
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        if self === object { return true }
+        guard let object = object as? Photo else { return false }
+        return id == object.id
+    }
 }

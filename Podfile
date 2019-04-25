@@ -12,5 +12,6 @@ target 'PicSumSwiftMVVM' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'IGListKit'
+  pod 'Kingfisher'
 
 end
