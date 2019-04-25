@@ -15,3 +15,8 @@
 
 
 // MARK: - HomeViewController
+"HomeTitle" = "Pic Sum";
+
+// MARK: - PhotoDetailViewController
+"PhotoDetailPostButtonText" = "Pagina do Post";
+"PhotoDetailAuthorButtonText" = "Pagina do Autor";

@@ -46,7 +46,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         self.delegate = delegate
         self.photo = photo
         
-        photoImageView.kf.setImage(with: URL(string: "https://picsum.photos/1920/1080?image=\(photo.id)"))
+        photoImageView.kf.setImage(with: URL(string: "\(Constants.basePhotoUrl)\(photo.id)"))
         authorLabel.text = photo.author
         authorUrlButton.setTitle(photo.authorUrl, for: .normal)
     }

@@ -32,14 +32,19 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindView()
-        prepareCollectionView()
+        setupView()
+        setupBindView()
+        setupCollectionView()
         
         viewModel.fetchPhotos()
     }
     
     // MARK: - Private Methods
-    private func bindView() {
+    private func setupView() {
+        self.title = R.string.localizable.homeTitle()
+    }
+    
+    private func setupBindView() {
         viewModel.photos
             .subscribe(onNext: { [weak self] photos in
                 guard let self = self, !photos.isEmpty else { return }
@@ -53,14 +58,13 @@ class HomeViewController: UIViewController {
         
         viewModel.openDetailPhoto
             .subscribe(onNext: { [weak self] photo in
-                guard let self = self, let photo = photo else { return }
-                
-                print(photo.author)
+                guard let self = self, let photo = photo, let navigation = self.navigationController else { return }
+                navigation.pushViewController(PhotoDetailViewController(photo: photo), animated: true)
             })
             .disposed(by: disposeBag)
     }
     
-    private func prepareCollectionView() {
+    private func setupCollectionView() {
         collectionView.backgroundColor = .clear
         adapter.collectionView = collectionView
         adapter.dataSource = self
@@ -87,9 +91,7 @@ extension HomeViewController: ListAdapterDataSource {
 // MARK: - HomeCollectionViewCellDelegate
 extension HomeViewController: HomeCollectionViewCellDelegate {
     func openBrowser(url: String) {
-        if let url = URL(string: url) {
-            UIApplication.shared.open(url, options: [:])
-        }
+        DeviceUtils.openBrowser(in: url)
     }
     
     func didSelect(item: Photo) {
